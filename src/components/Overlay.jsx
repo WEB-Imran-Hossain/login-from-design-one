@@ -15,21 +15,23 @@ const Overlay = ({ handleSignUpClick, handleSignInClick, isRightPanelActive }) =
             ? "To keep connected with us please login with your personal info"
             : "Enter your personal details and start your journey with us"}
         </p>
-        {isRightPanelActive ? (
+        {!isRightPanelActive ? (
           <button
             id="signIn"
             className="bg-transparent border border-white text-white font-bold py-3 px-8 mt-5 rounded-full uppercase text-xs tracking-widest transition-transform duration-100 ease-in transform active:scale-95 focus:outline-none"
-            onClick={handleSignInClick}
+            onClick={handleSignUpClick}
           >
             Sign In
           </button>
-        ) :    <button
-          id="signUp"
-          className="bg-transparent border border-white text-white font-bold py-3 px-8 mt-5 rounded-full uppercase text-xs tracking-widest transition-transform duration-100 ease-in transform active:scale-95 focus:outline-none"
-          onClick={handleSignUpClick}
-        >
-          Sign Up
-        </button>}
+        ) : (
+          <button
+            onClick={handleSignInClick}
+            id="signUp"
+            className="bg-transparent border border-white text-white font-bold py-3 px-8 mt-5 rounded-full uppercase text-xs tracking-widest transition-transform duration-100 ease-in transform active:scale-95 focus:outline-none"
+          >
+            Sign Up
+          </button>
+        )}
       </div>
       <div className="w-1/2 text-center p-10">
         <h1 className="font-bold text-3xl">{isRightPanelActive ? "Hello, Friend!" : "Welcome Back!"}</h1>
@@ -38,7 +40,6 @@ const Overlay = ({ handleSignUpClick, handleSignInClick, isRightPanelActive }) =
             ? "Enter your personal details and start your journey with us"
             : "To keep connected with us please login with your personal info"}
         </p>
-     
       </div>
     </div>
   </motion.div>
