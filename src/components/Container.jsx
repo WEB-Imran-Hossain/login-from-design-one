@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
 import Overlay from "./Overlay";
@@ -16,8 +16,8 @@ const Container = () => {
         isRightPanelActive ? "right-panel-active" : ""
       }`}
     >
-      <SignUpForm isRightPanelActive={isRightPanelActive} />
       <SignInForm isRightPanelActive={isRightPanelActive} />
+      <SignUpForm isRightPanelActive={isRightPanelActive} />
       <Overlay
         handleSignUpClick={handleSignUpClick}
         handleSignInClick={handleSignInClick}
